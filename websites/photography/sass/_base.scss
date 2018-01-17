@@ -1,0 +1,59 @@
+// COLOR VARIABLES
+$color-primary: #222;
+$color-primary-dark: #000;
+
+$color-secondary: rgb(70, 70, 70);
+$color-secondary-dark: #777;
+
+$color-grey-light-1: #ccc;
+$color-grey-light-2: #999;
+
+$color-grey-dark-1: #413732;
+$color-grey-dark-2: rgb(102, 102, 102);
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+
+//responsive breakpoints
+$bp-largest: 75em; //1200px
+$bp-large: 50em; //800px
+$bp-medium: 37.5em; //600px
+$bp-small: 28.125em;  //450px
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; //1 rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    font-family: $font-primary;
+    color: $color-grey-dark-2;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+    grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem)[col-end]) [center-end] minmax(6rem, 1fr) [full-end]; //1140/8 ~ 140
+
+
+    @media only screen and (max-width: $bp-large) {
+        grid-template-rows: 6rem calc(100vh - 6rem); //rest size based on the content
+    }
+}

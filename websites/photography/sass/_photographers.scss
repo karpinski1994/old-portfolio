@@ -1,0 +1,15 @@
+.photographers {
+    background-color: $color-secondary;
+    grid-column: col-start 7 / full-end;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    // padding: 3rem;
+    // grid-row-gap: 2rem;
+    justify-items: center;
+    @media only screen and (max-width: $bp-large) {
+        display: none;
+    }
+    overflow: hidden;
+
+}

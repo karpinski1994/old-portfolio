@@ -1,0 +1,533 @@
+//importing files order matters!
+@import "reset";
+@import "variables";
+@import "mixins";
+
+@import "popup";
+body {
+    font-family: $mainFontFamily;
+    font-size: $mFontSize;
+    
+}
+.container{
+   max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: rgba(#999,.1);
+    z-index: -500;
+}
+h2 {
+    @include font($xxxlFontSize, $secondFontFamily, $lighterDark);
+    text-align: center;
+    font-weight: bold;
+}
+.h2--white{
+        color: #fff;
+}
+h3{
+    @extend h2;
+    font-size: $xxlFontSize;
+}
+
+
+.header{
+    box-sizing: border-box;
+    width: 100%;
+    height: 700px;
+    position: relative;
+
+    
+    &__logo--first{
+        position: absolute;
+        top: 298px;
+        left: calc(50% - 95px);
+        @include font($xlFontSize, $mainFontFamily, #fff);
+        z-index: 100;
+    }
+    &__logo--second{
+        position: absolute;
+        top: 327px;
+        left: calc(50% - 31px);
+        font-family: $mainFontFamily;
+        @include font($xlFontSize, $mainFontFamily, #eee);
+        z-index: 100;
+    }
+    &__down-btn{
+        @include font($xxlFontSize, $mainFontFamily, $ultraLight);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: block;
+        border: 1px solid #999;
+        position: absolute;
+        top: 600px;
+        left: calc(50% - 26px);
+        background: rgba(0,0,0,.09);
+        transition: all 0.2s ease-in-out;
+        span {
+            position: absolute;
+            left: calc(50% - 11.1px);
+            top: calc(50% - 14.5px);
+        }
+        &:hover{
+            background: #333;
+            color: #fff;
+        }
+    }
+    .header__letter{
+        z-index: 200;
+        @include font(240px, $mainFontFamily, rgba(#fff, 0.05));
+        position: absolute;
+        top: 176px;
+        
+        @include mQ(590px){
+            color: rgba(#fff,.1);
+        }
+        @include mQ(740px){
+            color: #fff;
+        }
+    }
+    .header__letter--first{
+        @extend .header__letter;
+        left: calc(40% - (20% + 74.4px));
+        
+        
+    }
+    .header__letter--second{
+        @extend .header__letter;
+        left: calc(60% + (20% - 90px));
+        
+    }
+    canvas{
+        position: absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        width: 100%;
+        height: 600px;
+        height: 700px;
+            
+        z-index: -1;
+        position: absolute;
+        opacity: 1;
+        
+
+        clip-path: polygon(0 70%, 0 40%, 100% 30%, 100% 60%);
+        @include mQ(400px){
+            clip-path: polygon(0 80%, 0 40%, 100% 20%, 100% 60%);
+        }
+        @include mQ(740px){
+            clip-path: polygon(0 90%, 0 40%, 100% 10%, 100% 60%);
+        }
+             
+        
+    }
+}
+
+.heading {
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    height: 120px;
+    width: 100%;
+    .heading__first{
+        box-sizing: border-box;
+    @include font($xxxlFontSize, $mainFontFamily, $lighterDark);
+        position: absolute;
+        z-index: 2;
+        top: 40px;   
+    }
+    .heading__second{
+        box-sizing: border-box;
+        @include font($xsFontSize, $secondFontFamily, $dark);
+        font-size: $lFontSize;
+        position: absolute;
+        z-index: 0;
+        top: 30px;
+    }
+   /* .heading__moon{
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 1;
+        top: -57px;
+    }*/
+}
+.socials{
+        position: absolute;
+        top: -10px;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .socials__link {
+            margin: 5% 7%;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $ultraLight;
+            @include font($sFontSize,$mainFontFamily,$ultraLight);
+        }
+    }
+
+
+
+
+
+.numbers{
+        display: none;
+        position: absolute;
+        z-index: 5000;
+        top: 580px;
+        left: calc(50% - 30px);
+        @include font(152px, $numbersFontFamily, rgba(#333,1)); 
+        font-weight: 400;
+    }
+
+
+
+
+
+
+.projects{
+    position: relative;
+    width: 90%;
+    margin: 0 auto 70px;
+    
+    @include mQ(475px){
+        width: 80%;
+    }
+
+
+}
+.media{
+    
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    background-color: rgba(#000, .05);
+    .media__side{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        & > * {
+        z-index: 5;
+        }
+    }
+    .media__side--text{
+        z-index: 5;
+        position: relative;
+        margin-top: 45px;
+        
+    }
+    .media__side--project{
+        overflow: hidden;
+        
+        background-position: center;
+        background-size: cover;
+        
+        &--1{
+            background-image: url(../img/prekambr-1.jpg);
+        }
+        
+        &--2{
+            background-image: url(../img/social-1.jpg);
+        }
+        
+        &--3{
+            background-image: url(../img/grid-1.jpg);
+        }
+        
+        &--4{
+            background-image: url(../img/budget-1.jpg);
+        }
+        
+        &--5{
+            background-image: url(../img/business-1.jpg);
+        }
+        
+    }
+    .overlay
+    {
+        position: relative;
+        transform: skewY(-12deg);
+        width: 100%;
+        height: 400px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        &__desc{
+            padding: 6rem 3rem 10.5rem 3rem;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: -6rem;
+            width: 100%;
+            background-color: rgba(#efefff,.92);
+            
+            opacity: .1;
+            transition: all .3s ease-in-out;
+            &__a{
+                @include font($xlFontSize, $mainFontFamily, #fff);
+            }
+            
+            
+        }
+            .overP {
+                margin-bottom: -2rem;
+                transform: skewY(12deg);
+            }
+        &:hover .overlay__desc{
+            color: $ultraLight;
+            opacity: .95;
+            
+        }
+        
+        
+    }
+    
+
+    
+    .btn{
+        @include btn;
+        width: 60%;
+    }
+
+}
+
+
+
+.about {
+    margin: auto;
+    width: 90%;
+    @include mQ(475px){
+        width: 80%;
+    }
+    min-height: 800px;
+    margin-bottom: 70px;
+    .about__info{
+        margin-bottom: 50px;
+        text-align: justify;
+        @include font($mFontSize, $secondFontFamily, $dark);
+        
+    }
+    &__p {
+        text-shadow: .2px .2px 1px rgba(#000,.2);
+    }
+   
+}
+ .media--about{
+    .media__side--about{
+        width: 100%;
+        img {
+             width: 100%;
+            height: auto;
+        }
+        
+    }
+}
+.section-contact {
+    margin: 6rem 0;
+    color: #111;
+    background: #000;
+    &__details {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        @include mQ(768px){
+            flex-direction: row;
+        }
+
+    }
+    padding: 3rem 1rem 6rem 1rem;
+    @include mQ(768px){
+            padding: 5rem 1rem 12rem 1rem;
+            margin-bottom: 10rem;
+    }
+    
+    transform: skewY(-10deg);
+    
+    & > * {
+        transform: skewY(10deg);
+    }
+    
+    
+
+}
+
+.contact-box{
+    width: 28rem;
+    @include mQ(768px){
+            width: 28%;
+        }
+    margin: 1rem auto;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba($ultraDark, .6);
+    display: flex;
+    flex-direction: column;
+
+    transition: all .3s;
+    z-index: 20;
+    
+
+    &__icon {
+        margin: 1.5rem auto;
+        fill: $ultraLight;
+        height: 5rem;
+        width: 5rem;
+        transition: all .3s;
+    }
+    &__detail {
+        font-family: $secondFontFamily;
+        display: block;
+        color: $ultraLight;
+        text-decoration: none;
+        transition: all .3s;
+    }
+    &:hover {
+        transform: translateY(-.2rem);
+        background-color: #fff;
+        
+    }
+    &:hover > *{
+        fill: $ultraDark;
+        transform: translateY(-.2rem);
+        text-shadow: .7rem 2rem 4rem rgba($lighterDark, .9);
+        
+        color: #111;
+    }
+    
+    
+}
+
+
+.footer {
+    margin-top: 4rem;
+    font-size: 1.4rem;
+    color: $ultraDark;
+    @include font($mFontSize, $secondFontFamily, $dark);
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0 5rem 0;
+
+//    @include respond(tab-port) {
+//        margin-top: 5rem;
+//        padding: 8rem 0;
+//    }
+
+    &__logo-box {
+        text-align: center;
+        margin-bottom: 8rem;
+
+//        @include respond(tab-port) {
+//            margin-bottom: 6rem;
+//        }
+    }
+
+    &__logo {
+        width: 15rem;
+        height: auto;
+    }
+
+    &__navigation {
+        border-top: .1rem solid $lighterDark;
+        padding-top: 2rem;
+        display: inline-block;
+
+//        @include respond(tab-port) {
+//            width: 100%;
+//        }
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include mQ(420px){
+            flex-direction: row;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            color: $ultraDark;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover,
+        &:active {
+            color: $ultraDark;
+            box-shadow: 0 1rem 2rem rgba($ultraDark, .4);
+            transform: scale(1.3);
+        }
+    }
+
+    &__copyright {
+        border-top: .1rem solid $ultraDark;
+        padding-top: 2rem;
+
+//        @include respond(tab-port) {
+//            width: 100%;
+//        }
+
+    }
+}
+
+
+
+
+@include mQ(768px){
+.about {
+    position: relative;
+    margin: 0 auto 90px;
+    width: 80%;
+    min-height: 500px;
+    .about__info{
+        position: absolute;
+        width: 45%;
+        font-size: 14px;
+        @include mQ(822px){
+            font-size: 15px
+        }
+        @include mQ(844px){
+            font-size: 16px
+        }
+        @include mQ(921px){
+            font-size: 18px
+        }
+        @include mQ(1024px){
+            font-size: 20px
+        }
+        @include mQ(1113px){
+            font-size: 22px
+        }
+    }
+   
+}
+ .media--about{
+    display: flex;
+    align-items: flex-end;
+    .media__side--about{
+        width: 50%;
+        img {
+             width: 100%;
+            height: auto;
+        }
+    }
+}
+    
+}
+   

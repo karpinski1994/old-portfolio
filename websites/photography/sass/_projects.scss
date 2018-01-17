@@ -1,0 +1,84 @@
+.projects {
+
+    margin: 15rem 0;
+
+    display: grid;
+    grid-column: center-start / center-end;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+
+    &__heading {
+        grid-row: 1 / 2 ;
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-bottom: -6rem;
+    }
+}
+
+.offer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 3.5rem;
+
+    background-color: $color-grey-light-1;
+
+    &__img {
+        width: 100%;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+    }
+
+    &__name {
+        z-index: 3;
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        justify-self: center;
+        align-self: end;
+
+        width: 80%;
+        font-family: $font-display;
+        font-size: 1.6rem;
+        text-align: center;
+        padding: 1.25rem;
+        background-color: $color-primary;
+        color: #fff;
+        font-weight: 400;
+
+        transform: translateY(50%);
+    }
+
+    &__icon {
+
+    }
+
+    &__location,
+    &__details {
+        margin-top: 2.5rem;
+    }
+
+    &__location,
+    &__details,
+    &__details-more,
+    &__price {
+
+        font-size: 1.5rem;
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+
+        svg {
+            margin-right: 1rem;
+            fill: $color-primary;
+            height: 2rem;
+            width: 2rem;
+        }
+
+        p {
+
+        }
+    }
+
+    &__btn {
+        grid-column: 1 / -1;
+    }
+}

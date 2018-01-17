@@ -1,0 +1,62 @@
+
+
+//TYPOGRAPHY
+$mainFontFamily: 'Cinzel Decorative', cursive;
+
+$secondFontFamily: 'Roboto', sans-serif;
+
+$numbersFontFamily: 'Playfair Display', serif;
+
+$xsFontSize: 1rem;
+
+$sFontSize: 1.2rem;
+
+$mFontSize: 1.6rem;
+
+$lFontSize: 2rem;
+
+$xlFontSize: 2.4rem;
+
+$xxlFontSize: 2.8rem;
+
+$xxxlFontSize: 4.4rem;
+
+$ultraDark: #111111;
+
+$dark: lighten($ultraDark, 5%);
+
+$lighterDark: lighten($dark, 5%);
+
+$light: lighten($lighterDark, 5%);
+
+$veryLight: lighten($light, 5%);
+
+$ultraLight: lighten($veryLight, 5%);
+
+
+//headings regular
+$headingFontSize: 5rem;
+
+
+//COLORS
+$backgroundColor: #ffffff;
+
+
+html {
+
+    // default 16px => 10px 
+    font-size: 62.5%;
+
+}//sass variables
+
+body {
+    box-sizing: border-box;
+    font-family: $mainFontFamily;
+    font-size: $mFontSize;
+    
+}
+
+::selection {
+    background-color: $ultraDark;
+    color: $backgroundColor;
+}

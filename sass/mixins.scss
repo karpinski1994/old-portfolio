@@ -1,0 +1,82 @@
+//mixins
+
+@mixin mQ($arg...) {
+    @if length($arg) == 1{
+        @media screen and (min-width: nth($arg,1)){
+            @content;
+        }
+    }
+    @if length($arg) ==2 {
+        @media screen and (min-width: nth($arg,1)) and (max-width: nth($arg,2)){
+            @content;
+        }
+    }
+}
+
+@mixin font($size, $family, $color) {
+    font-size: $size;
+    font-family: $family;
+    color: $color;
+    
+}
+
+@mixin grid($cols, $margin){
+    float: left;
+    margin-right: $margin;
+    margin-bottom: $margin;
+    width: ((100% -($cols - 1) * $margin) / $cols);
+    //variable
+    &:nth-child(#{$cols}n){
+        margin-right: 0;
+        
+    } 
+}
+
+@mixin btn (){
+        @include font($sFontSize, $mainFontFamily, #000);
+        font-weight: bold;
+        text-align: center;
+        margin: 0 auto 20px;
+        width: 220px;
+        padding: 10px;
+        color: #666;
+        border: 1px solid #666;
+        box-shadow: 2px 2px 1px rgba(#000, .7);
+        transition: all .3s;
+        &:hover{
+            color: #eee;
+            border: 1px solid #eee;
+            background-color: #111;
+            transform: translateY(-.3rem);
+            box-shadow: 5px 5px 2px rgba(#000, .6);
+            cursor: pointer;
+        }
+    
+}
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content }; //600px
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) { @content };
+        //900px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) { @content };
+        //1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content };
+        //1800px
+    }
+}
+
+
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
