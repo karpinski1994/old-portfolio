@@ -387,6 +387,21 @@ h3 {
     text-align: center; }
     .media .media__side > * {
       z-index: 5; }
+    .media .media__side__p {
+      padding: 0 1rem;
+      font-size: 60%; }
+      @media screen and (min-width: 470px) {
+        .media .media__side__p {
+          font-size: 70%;
+          padding: 0 1.5rem; } }
+      @media screen and (min-width: 770px) {
+        .media .media__side__p {
+          padding: 0 2rem;
+          font-size: 90%; } }
+      @media screen and (min-width: 1000px) {
+        .media .media__side__p {
+          padding: 0 3rem;
+          font-size: 100%; } }
   .media .media__side--text {
     z-index: 5;
     position: relative;

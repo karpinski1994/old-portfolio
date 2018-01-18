@@ -45,7 +45,7 @@ function init(){
            }else if(currentOffset > 1405 & currentOffset <1800) {
                currentNumber = 4;
                number.textContent = currentNumber;
-           }else if(currentOffset > 1800 & currentOffset <2035) {
+           }else if(currentOffset > 1790 & currentOffset <2035) {
                currentNumber = 5;
                number.textContent = currentNumber;
            }else{

@@ -46,9 +46,8 @@ var prekambrData = {
           techs: ['json','html', 'css', 'js']
       },
   links: {
-          code: 'http://prekambr.pl',
-          live: 'https://github.com/karpinski1994/prekambr.pl'
-        
+          code: 'https://github.com/karpinski1994/prekambr.pl',
+          live: 'http://prekambr.pl'
       }
 };
     
@@ -65,8 +64,8 @@ var socialData = {
           techs: ['Flex','html', 'css', 'js']
       },
     links: {
-          code: 'http://prekambr.pl',
-          live: 'https://github.com/karpinski1994/prekambr.pl'
+          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/websites/social',
+          live: 'websites/social/index.html'
         
       }
     //trzeba dodac linki do hrefow
@@ -85,8 +84,8 @@ var gridData = {
           techs: ['Flex','html', 'css', 'js']
       },
     links: {
-          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/websites/photography',
-          live: ''
+          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/websites/grid',
+          live: 'websites/grid/index.html'
         
       }
     //trzeba dodac linki do hrefow
@@ -105,7 +104,7 @@ var budgetData = {
           techs: ['Flex','html', 'css', 'js']
       },
     links: {
-          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/websites/photography',
+          code: 'https://github.com/karpinski1994/budget-manager',
           live: ''
         
       }
@@ -125,8 +124,8 @@ var businessData = {
           techs: ['Flex','html', 'css', 'js']
       },
     links: {
-          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/websites/photography',
-          live: ''
+          code: 'https://github.com/karpinski1994/karpinski1994.github.io/tree/master/app/business',
+          live: 'app/business/main.html'
         
       }
     //trzeba dodac linki do hrefow
@@ -174,7 +173,12 @@ const projects = document.querySelector('.projects');
 projects.addEventListener('click', rendererPopup.getId);      
 
 function togglePopup(obj) {
-    let html = `<div class="popup" id="popup-project-1"><div class="popup__content"><div class="popup__left"><img class="popup__img" src="img/${obj.getId()}-2.jpg" alt="Masonry Website"><img class="popup__img" src="img/${obj.getId()}-3.jpg" alt="Prekambr website"></div><div class="popup__right"><a id="close-btn" href="#projects" class="popup__close">&times;</a><h3>${obj.getTitle().main}</h3><div class="popup__description "><h2>${obj.getTitle().sub}</h2><p class="paragraph">${obj.getDetails().desc}</p><h3>Technologies used:</h3><div class="popup__techs"><ul>${obj.generateList()}</ul></div></div><div class="popup__buttons"><a href="${obj.getLinks().live}" class="popup__right__btn" target="_blank">View code</a><a href="${obj.getLinks().code}" class="popup__right__btn" target="_blank">See live</a></div></div></div></div>`;
+    let html;
+    if(obj.getLinks().live !== ''){
+        html = `<div class="popup" id="popup-project-1"><div class="popup__content"><div class="popup__left"><img class="popup__img" src="img/${obj.getId()}-2.jpg" alt="Masonry Website"><img class="popup__img" src="img/${obj.getId()}-3.jpg" alt="${obj.getId()} website"></div><div class="popup__right"><a id="close-btn" href="#projects" class="popup__close">&times;</a><h3>${obj.getTitle().main}</h3><div class="popup__description "><h2>${obj.getTitle().sub}</h2><p class="paragraph">${obj.getDetails().desc}</p><h3>Technologies used:</h3><div class="popup__techs"><ul>${obj.generateList()}</ul></div></div><div class="popup__buttons"><a href="${obj.getLinks().code}" class="popup__right__btn" target="_blank">View code</a><a href="${obj.getLinks().live}" class="popup__right__btn" target="_blank">See live</a></div></div></div></div>`;
+    }else{
+        html = `<div class="popup" id="popup-project-1"><div class="popup__content"><div class="popup__left"><img class="popup__img" src="img/${obj.getId()}-2.jpg" alt="Masonry Website"><img class="popup__img" src="img/${obj.getId()}-3.jpg" alt="${obj.getId()} website"></div><div class="popup__right"><a id="close-btn" href="#projects" class="popup__close">&times;</a><h3>${obj.getTitle().main}</h3><div class="popup__description "><h2>${obj.getTitle().sub}</h2><p class="paragraph">${obj.getDetails().desc}</p><h3>Technologies used:</h3><div class="popup__techs"><ul>${obj.generateList()}</ul></div></div><div class="popup__buttons"><a href="${obj.getLinks().code}" class="popup__right__btn" target="_blank">View code</a></div></div></div></div>`;
+    }
     
     
     

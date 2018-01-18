@@ -34,6 +34,8 @@ h3{
 .header{
     box-sizing: border-box;
     width: 100%;
+    
+    
     height: 700px;
     position: relative;
 
@@ -212,6 +214,26 @@ h3{
         text-align: center;
         & > * {
         z-index: 5;
+        }
+        
+        &__p {
+            padding: 0 1rem;
+            font-size: 60%;
+            @include mQ(470px){
+                font-size: 70%;
+                padding: 0 1.5rem;
+            }
+            
+            @include mQ(770px){
+                padding: 0 2rem;
+                font-size: 90%;
+                
+            }
+            @include mQ(1000px){
+                padding: 0 3rem;
+                font-size: 100%;
+                
+            }
         }
     }
     .media__side--text{
