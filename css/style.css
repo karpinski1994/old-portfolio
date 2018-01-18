@@ -467,7 +467,7 @@ h3 {
     align-items: flex-end;
     justify-content: flex-end; }
     .media .overlay__desc {
-      padding: 6rem 3rem 10.5rem 3rem;
+      padding: 6rem 1rem 10.5rem 1rem;
       display: flex;
       align-items: flex-end;
       margin-bottom: -6rem;
@@ -475,13 +475,17 @@ h3 {
       background-color: rgba(239, 239, 255, 0.92);
       opacity: .1;
       transition: all .3s ease-in-out; }
+      @media screen and (min-width: 740px) {
+        .media .overlay__desc {
+          padding: 6rem 3rem 10.5rem 3rem; } }
       .media .overlay__desc__a {
         font-size: 2.4rem;
         font-family: "Cinzel Decorative", cursive;
         color: #fff; }
     .media .overlay .overP {
       margin-bottom: -2rem;
-      transform: skewY(12deg); }
+      transform: skewY(12deg);
+      font-size: 90%; }
     .media .overlay:hover .overlay__desc {
       color: #515151;
       opacity: .95; }

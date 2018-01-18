@@ -320,7 +320,14 @@ h3{
         align-items: flex-end;
         justify-content: flex-end;
         &__desc{
-            padding: 6rem 3rem 10.5rem 3rem;
+            
+            
+            
+            padding: 6rem 1rem 10.5rem 1rem;
+            
+            @include mQ(740px){
+                padding: 6rem 3rem 10.5rem 3rem;
+            }
             display: flex;
             align-items: flex-end;
             margin-bottom: -6rem;
@@ -331,6 +338,7 @@ h3{
             transition: all .3s ease-in-out;
             &__a{
                 @include font($xlFontSize, $mainFontFamily, #fff);
+                
             }
             
             
@@ -338,6 +346,7 @@ h3{
             .overP {
                 margin-bottom: -2rem;
                 transform: skewY(12deg);
+                font-size: 90%;
             }
         &:hover .overlay__desc{
             color: $ultraLight;
