@@ -120,7 +120,7 @@ var businessData = {
       },
   
   details: {
-          desc: 'This was one of my firsts JS projects. I wanted to develop my programming skills: dividing code into modules, encapsulation. And increase my knowledge about vanilla JS. I wated to train practically concepts like clousers, hoisting, prototype chain, lexical scope etc. Originally project includes simple login system and database of players.',
+          desc: 'In this project i trained modular Vanilla JS with its features like closures. Originally project includes simple login system and database.',
           techs: ['Flex','html', 'css', 'js']
       },
     links: {

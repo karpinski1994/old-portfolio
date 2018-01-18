@@ -141,7 +141,8 @@ h3{
     @include font($xxxlFontSize, $mainFontFamily, $lighterDark);
         position: absolute;
         z-index: 2;
-        top: 40px;   
+        top: 40px; 
+        left: 30%;
     }
     .heading__second{
         box-sizing: border-box;
@@ -150,6 +151,7 @@ h3{
         position: absolute;
         z-index: 0;
         top: 30px;
+        left: 70%;
     }
    /* .heading__moon{
         box-sizing: border-box;

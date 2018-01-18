@@ -73,7 +73,7 @@ function init(){
         const about = document.querySelector('#about');
         let currentOffset = window.pageYOffset;
        
-        let difference =  currentOffset - 1900;
+        let difference =  currentOffset - 1800;
        
        about.style.opacity = 0;
        let value = (difference / 500) +0.1;
